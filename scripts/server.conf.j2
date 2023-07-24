@@ -1,0 +1,9 @@
+rest_cherrypy:
+    port: 443
+    host: 0.0.0.0
+    #disable_ssl: true
+    ssl_crt: /etc/pki/tls/certs/{{ hostvars[inventory_hostname].cert_name }}.cer
+    ssl_key: /etc/pki/tls/certs/{{ hostvars[inventory_hostname].cert_name }}.key
+    app: /srv/saltshaker/index.html
+    static: /srv/saltshaker/static
+    static_path: /static

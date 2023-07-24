@@ -1,0 +1,61 @@
+---
+- name: Playbook to setup saltshaker servers
+  hosts: hosts
+  gather_facts: true
+  become: true
+
+  vars_files:
+    - ./secrets.yml
+
+  vars:
+    ansible_become_pass: "{{ sudo_password }}"
+
+  tasks:
+    - name: Salt Bootstarp Script
+      copy:
+        src: ./scripts/bootstrap-salt.sh
+        dest: /tmp/script.sh
+        mode: 0755
+
+    - name: Bootstrap salt
+      command: /tmp/script.sh -M
+      register: script_output
+
+    - name: Ensure required packages are installed
+      package:
+        name:
+          - salt-master
+          - salt-syndic
+          - salt-api
+          - nano
+        state: present
+
+    - name: Add user 'saltadmin'
+      user:
+        name: saltadmin
+        password: "{{ saltadmin_password | password_hash('sha512') }}"
+        state: present
+        createhome: yes
+
+    - name: Add user 'saltuser'
+      user:
+        name: saltuser
+        password: "{{ saltuser_password | password_hash('sha512') }}"
+        state: present
+        createhome: yes
+
+    - name: Copy certificate zip
+      copy:
+        src: ./certificates/{{ hostvars[inventory_hostname].cert_name }}.zip
+        dest: /tmp/cert.zip
+        mode: 0755
+
+    - name: Create folder path for certificate
+      file:
+        path: /etc/pki/tls/certs/
+        state: directory
+
+    - name: Unzip certificate
+      command: unzip -q -o cert.zip -d /etc/pki/tls/certs/
+      args:
+        chdir: /tmp/

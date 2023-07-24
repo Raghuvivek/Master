@@ -1,0 +1,3 @@
+---
+- import_playbook: base-playbook.yml
+- import_playbook: update-playbook.yml
