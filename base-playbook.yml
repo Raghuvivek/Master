@@ -59,3 +59,8 @@
       command: unzip -q -o cert.zip -d /etc/pki/tls/certs/
       args:
         chdir: /tmp/
+    
+    - name: Delete existing salt folder
+      file:
+        state: absent
+        path: /srv/salt/

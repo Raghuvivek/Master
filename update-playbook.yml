@@ -1,6 +1,6 @@
 ---
 - name: Playbook to update saltshaker servers
-  hosts: all
+  hosts: hosts
   gather_facts: true
   become: true
 
@@ -27,10 +27,6 @@
       template:
         src: ./scripts/minion.py
         dest: /usr/lib/python3/dist-packages/salt/minion.py
-
-    - name: Copy certificate zip
-      debug:
-        msg: "cert_name for {{ inventory_hostname }} is {{ hostvars[inventory_hostname].cert_name }}"
 
     - name: Set permissions on /srv folder
       file:
