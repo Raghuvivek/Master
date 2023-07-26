@@ -1,0 +1,46 @@
+---
+- name: Playbook to update saltshaker servers
+  hosts: hosts
+  gather_facts: true
+  become: true
+
+  vars_files:
+    - ./secrets.yml
+
+  vars:
+    ansible_become_pass: "{{ sudo_password }}"
+
+  tasks:
+    - name: Copy salt master configs
+      copy:
+        src: "./configs/"
+        dest: "/etc/salt/master.d/"
+        force: false
+    
+    - name: Force reactor config updates
+      copy:
+        src: "./configs/reactor.conf"
+        dest: "/etc/salt/master.d/reactor.conf"
+        force: true
+
+    - name: Restart services
+      block:
+        - name: Restart salt-minion
+          service:
+            name: salt-minion
+            state: restarted
+
+        - name: Restart salt-master
+          service:
+            name: salt-master
+            state: restarted
+
+        - name: Restart salt-syndic
+          service:
+            name: salt-syndic
+            state: restarted
+
+        - name: Restart salt-api
+          service:
+            name: salt-api
+            state: restarted

@@ -1,0 +1,25 @@
+---
+- name: Playbook to update saltshaker servers
+  hosts: all
+  gather_facts: true
+  become: true
+
+  vars_files:
+    - ./secrets.yml
+
+  vars:
+    ansible_become_pass: "{{ sudo_password }}"
+
+  tasks:
+    - name: Clone Saltshaker repository
+      git:
+        repo: git@github.bus.zalan.do:whit-berlin/zalando-saltshaker.git
+        dest: /srv/saltshaker/
+        version: develop
+        accept_hostkey: yes
+      become: false
+
+    - name: Update saltshaker location settings
+      template:
+        src: ./scripts/location.js.j2
+        dest: /srv/saltshaker/static/location.js

@@ -1,0 +1,20 @@
+---
+- name: Playbook to update saltshaker servers
+  hosts: all
+  gather_facts: true
+  become: true
+
+  vars_files:
+    - ./secrets.yml
+
+  vars:
+    ansible_become_pass: "{{ sudo_password }}"
+
+  tasks:
+    - name: Clone Salt repository
+      git:
+        repo: git@github.bus.zalan.do:whit-berlin/salt.git
+        dest: /srv/salt/
+        version: main
+        accept_hostkey: yes
+      become: false

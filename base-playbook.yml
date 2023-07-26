@@ -64,3 +64,20 @@
       file:
         state: absent
         path: /srv/salt/
+    
+    - name: Copy server config
+      template:
+        src: ./scripts/server.conf.j2
+        dest: /etc/salt/master.d/server.conf
+        force: true
+    
+    - name: Update minion of salt for syndic fix
+      template:
+        src: ./scripts/minion.py
+        dest: /usr/lib/python3/dist-packages/salt/minion.py
+
+    - name: Set permissions on /srv folder
+      file:
+        path: /srv
+        state: directory
+        mode: "0777"

@@ -5,11 +5,13 @@ rot-lxwhsaltprd cert_name=0c9cf57b-a666-4fdb-bbf0-20038277d4e2 wh_code=ROT
 elz-lxwhsaltprd cert_name=10538314-6ca1-401e-8cf2-c0361a9df746 wh_code=ERF
 mgl-lxwhsaltprd cert_name=bda8edc1-5293-4102-beb3-04c2624358e3 wh_code=MGL
 luu-lxwhsaltprd cert_name=b49b4085-ee31-4881-864c-cde9509830cb wh_code=LUU
-szc-lxwhsaltprd cert_name=8f0a56fe-e5cf-4a73-a0bb-6606b5a29de9 wh_code=SZC
-ver-lxwhsaltprd cert_name=6e215404-1762-4ec2-87f2-0afb7ccef48b wh_code=VER
-llz-lxwhsaltprd cert_name=1ee6e258-6015-4089-98f5-dcc42cbd5248 wh_code=LAH
-gda-lxwhsaltprd cert_name=bf06880a-91e6-4ee0-8bb9-5d4c44b5cbeb wh_code=GDA
 byd-lxwhsaltprd cert_name=9bb32a00-dfc9-4dc5-aa6c-afaa1a1fb3ab wh_code=BYD
 
 [master]
 zdc-lxwhsaltprd cert_name=b882badc-dd17-4412-97f1-dc01bf426360 wh_code=BER
+
+[new]
+szc-lxwhsaltprd cert_name=8f0a56fe-e5cf-4a73-a0bb-6606b5a29de9 wh_code=SZC
+ver-lxwhsaltprd cert_name=6e215404-1762-4ec2-87f2-0afb7ccef48b wh_code=VER
+llz-lxwhsaltprd cert_name=1ee6e258-6015-4089-98f5-dcc42cbd5248 wh_code=LAH
+gda-lxwhsaltprd cert_name=bf06880a-91e6-4ee0-8bb9-5d4c44b5cbeb wh_code=GDA
