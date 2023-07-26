@@ -1,5 +1,5 @@
 ---
-- name: Playbook to update saltshaker servers
+- name: Playbook to update salt state configs
   hosts: all
   gather_facts: true
   become: true
