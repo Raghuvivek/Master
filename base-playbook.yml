@@ -1,6 +1,6 @@
 ---
 - name: Playbook to setup saltshaker servers
-  hosts: hosts
+  hosts: new
   gather_facts: true
   become: true
 
