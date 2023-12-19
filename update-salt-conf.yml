@@ -19,4 +19,5 @@
         accept_hostkey: yes
         recursive: yes
         update: yes
+        force: yes
       become: false

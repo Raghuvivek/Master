@@ -15,5 +15,6 @@ llz-lxwhsaltprd cert_name=1ee6e258-6015-4089-98f5-dcc42cbd5248 wh_code=LAH
 zdc-lxwhsaltprd cert_name=b882badc-dd17-4412-97f1-dc01bf426360 wh_code=BER
 
 [new]
-
+zdc-lxwhsalt3pl cert_name=a2ed4e25-1713-4b35-a69c-ecda3feb35fc wh_code=3PL
+poz-lxwhsaltprd cert_name=559e6489-f4a5-44eb-8737-3f14a9727089 wh_code=POZ
 
