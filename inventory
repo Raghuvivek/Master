@@ -10,11 +10,12 @@ gda-lxwhsaltprd cert_name=bf06880a-91e6-4ee0-8bb9-5d4c44b5cbeb wh_code=GDA
 szc-lxwhsaltprd cert_name=8f0a56fe-e5cf-4a73-a0bb-6606b5a29de9 wh_code=SZC
 ver-lxwhsaltprd cert_name=6e215404-1762-4ec2-87f2-0afb7ccef48b wh_code=VER
 llz-lxwhsaltprd cert_name=1ee6e258-6015-4089-98f5-dcc42cbd5248 wh_code=LAH
+zdc-lxwhsalt3pl cert_name=a2ed4e25-1713-4b35-a69c-ecda3feb35fc wh_code=3PL
+poz-lxwhsaltprd cert_name=559e6489-f4a5-44eb-8737-3f14a9727089 wh_code=POZ
 
 [master]
 zdc-lxwhsaltprd cert_name=b882badc-dd17-4412-97f1-dc01bf426360 wh_code=BER
 
 [new]
-zdc-lxwhsalt3pl cert_name=a2ed4e25-1713-4b35-a69c-ecda3feb35fc wh_code=3PL
-poz-lxwhsaltprd cert_name=559e6489-f4a5-44eb-8737-3f14a9727089 wh_code=POZ
+
 
